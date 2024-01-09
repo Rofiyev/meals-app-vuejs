@@ -1,9 +1,12 @@
 <template>
-  <section>
-    <RouterView />
-  </section>
+  <div class="bg-gray-100 h-100">
+    <HeaderComponent />
+    <main>
+      <RouterView />
+    </main>
+  </div>
 </template>
 
-<script></script>
-
-<style scoped></style>
+<script setup>
+import HeaderComponent from '@/components/HeaderComponent.vue'
+</script>
