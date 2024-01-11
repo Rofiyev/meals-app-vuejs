@@ -41,7 +41,7 @@ export default {
   mounted() {
     ;(async () => {
       const { data } = await axiosClient.get('/list.php?i=list')
-      this.ingredients = data
+      this.ingredients = data.meals
     })()
   }
 }
