@@ -10,5 +10,6 @@ export default {
   mealsByIngredient: {
     loading: false,
     data: []
-  }
+  },
+  ingredient: {}
 }

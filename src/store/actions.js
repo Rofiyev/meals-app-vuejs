@@ -7,16 +7,16 @@ export function searchMeals({ commit }, serachValue) {
 }
 
 //
-export function serachMealsByLetter({ commit }, letter) {
+export function searchMealsByLetter({ commit }, letter) {
   axiosClient.get(`search.php?f=${letter}`).then(({ data }) => {
     commit('setMealsByLetter', data.meals)
   })
 }
 
 //
-export function serachMealsByIngredient({ commit }, ingredient) {
-  axiosClient.get(`search.php?i=${ingredient}`).then(({ data }) => {
-    commit('mealsByIngredient', data.meals)
+export function searchMealsByIngredient({ commit }, ingredient) {
+  axiosClient.get(`filter.php?i=${ingredient}`).then(({ data }) => {
+    commit('setMealsByIngredient', data.meals)
   })
 }
 

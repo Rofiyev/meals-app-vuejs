@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow rounded-2xl">
+  <div class="bg-white shadow rounded-2xl hover:scale-105 transition-transform">
     <RouterLink :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
       <img
         :src="meal.strMealThumb"
@@ -10,9 +10,8 @@
 
     <div class="p-3">
       <h3 class="font-bold">{{ meal.strMeal }}</h3>
-      <p class="mb-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur tempore ex nulla illum
-        asperiores dolores? Voluptatem fuga illo amet voluptas possimus quia
+      <p class="mb-4 line-clamp-6">
+        {{ meal.strInstructions }}
       </p>
       <div class="flex items-center justify-between">
         <YoutubeButtonComponent :href="meal.strYoutube"> Youtube </YoutubeButtonComponent>

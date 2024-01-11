@@ -1,5 +1,9 @@
 <template>
   <div class="p-8 pb-0 min-h-screen">
+    <div class="pb-0">
+      <h1 class="text-4xl font-bold mb-4 text-orange-500">Search Meals by Name</h1>
+    </div>
+
     <input
       type="text"
       class="rounded border-2 border-gray-200 w-full"
@@ -8,25 +12,20 @@
       @input="searchMeals"
     />
 
-    <div>
-      <LoaderComponent v-if="loading" />
-
-      <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 py-8">
-        <MealItemComponent v-for="meal in meals" :key="meal.idMeal" :meal="meal" />
-      </div>
+    <div class="mt-8">
+      <MealsComponent :meals="meals" />
     </div>
   </div>
 </template>
 
 <script>
-import MealItemComponent from '@/components/MealItemComponent.vue'
-import LoaderComponent from '@/components/LoaderComponent.vue'
 import store from '@/store'
 import { mapState } from 'vuex'
+import MealsComponent from '@/components/MealsComponent.vue'
 
 export default {
   name: 'MealsByNameView',
-  components: { MealItemComponent, LoaderComponent },
+  components: { MealsComponent },
   data() {
     return {
       search: ''
@@ -34,8 +33,11 @@ export default {
   },
   methods: {
     async searchMeals() {
-      store.dispatch('searchMeals', this.search)
-      store.dispatch('setLoading')
+      if (this.search) {
+        store.dispatch('searchMeals', this.search)
+        store.dispatch('setLoading')
+      }
+      store.commit('')
     }
   },
   computed: {

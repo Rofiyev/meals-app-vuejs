@@ -13,7 +13,10 @@ export function setMealsByIngredient(state, meals) {
   state.mealsByIngredient.data = meals
   state.mealsByIngredient.loading = false
 }
-
+//
+export function setIngredient(state, ingredient) {
+  state.ingredient = ingredient
+}
 //
 export function toggleLoading(state) {
   state.searchedMeals.loading = true

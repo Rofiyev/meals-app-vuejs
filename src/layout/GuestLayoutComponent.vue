@@ -1,7 +1,3 @@
 <template>
-  <div>LOgin Page</div>
+  <div>Login Page</div>
 </template>
-
-<script>
-export default {}
-</script>

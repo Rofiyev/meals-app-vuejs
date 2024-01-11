@@ -5,6 +5,7 @@ import MealsByNameView from '@/views/MealsByNameView.vue'
 import MealsByLetterView from '@/views/MealsByLetterView.vue'
 import MealsByIngredientsView from '@/views/MealsByIngredientsView.vue'
 import MealDetailView from '@/views/MealDetailView.vue'
+import IngredientsView from '@/views/IngredientsView.vue'
 import LayoutComponent from '@/layout/LayoutComponent.vue'
 import GuestLayoutComponent from '@/layout/GuestLayoutComponent.vue'
 
@@ -36,8 +37,13 @@ const router = createRouter({
           component: MealsByLetterView
         },
         {
+          path: '/ingredients',
+          name: 'ingredients',
+          component: IngredientsView
+        },
+        {
           path: '/by-ingredient/:ingredient?',
-          name: 'byIngredients',
+          name: 'byIngredient',
           component: MealsByIngredientsView
         },
         {
